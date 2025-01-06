@@ -1,13 +1,18 @@
 function App() {
     const { Container, Row, Col } = ReactBootstrap;
     return (
-        <Container>
-            <Row>
-                <Col md={{ offset: 3, span: 6 }}>
-                    <TodoListCard />
-                </Col>
-            </Row>
-        </Container>
+        <ReactFragment>
+            <header style={{ textAlign: 'center', padding: '10px', backgroundColor: '#f8f9fa' }}>
+                <h1>This is Elyanah's todo list!</h1>
+            </header>
+            <Container>
+                <Row>
+                    <Col md={{ offset: 3, span: 6 }}>
+                        <TodoListCard />
+                    </Col>
+                </Row>
+            </Container>
+        </ReactFragment>
     );
 }
 
@@ -51,7 +56,6 @@ function TodoListCard() {
 
     return (
         <React.Fragment>
-            <h1>This is Elyanah's todo list!</h1>
             <AddItemForm onNewItem={onNewItem} />
             {items.length === 0 && (
                 <p className="text-center">No items yet! Add one above!</p>
